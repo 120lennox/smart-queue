@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'dj_rest_auth',
     'dj_rest_auth.registration',
     'allauth.socialaccount',
+    'drf_spectacular',
 
 ]
 
@@ -61,7 +62,8 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
         'rest_framework.authentication.SessionAuthentication',
-    )
+    ),
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 }
 
 REST_AUTH = {
@@ -86,6 +88,13 @@ SIMPLE_JWT = {
 }
 
 SITE_ID = 1
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Smart Queue API',
+    'DESCRIPTION': 'API for managing smart queues',
+    'VERSION': '1.0.0',
+    'SERVE_INCLUDE_SCHEMA': False,
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
