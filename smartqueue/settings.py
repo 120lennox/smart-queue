@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-mgud)o0#ot-+*8s9p!-sj^ynzjsk+2a*g*hne$3i7nu+mq!fo4
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://smart-queue-btrn.onrender.com']
+ALLOWED_HOSTS = ['*', 'https://smart-queue-btrn.onrender.com']
 
 
 # Application definition
@@ -60,6 +60,9 @@ INSTALLED_APPS = [
 
 CORS_ALLOW_ALL_ORIGINS = True  # Set to False in production
 CORS_ALLOW_CREDENTIALS = True
+CSRF_COOKIE_SECURE = False  # True in production with HTTPS
+CSRF_COOKIE_HTTPONLY = False
+CSRF_COOKIE_SAMESITE = 'Lax'
 
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
@@ -67,7 +70,7 @@ CORS_ALLOWED_ORIGINS = [
     'http://127.0.0.1:3000',
     "https://v0.dev",
     "https://v0.app",
-    'https://smart-queue-btrn.onrender.com'
+    'https://smart-queue-btrn.onrender.com',
 ]
 
 REST_FRAMEWORK = {
