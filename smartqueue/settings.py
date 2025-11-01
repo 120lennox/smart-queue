@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-mgud)o0#ot-+*8s9p!-sj^ynzjsk+2a*g*hne$3i7nu+mq!fo4
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://smart-queue-btrn.onrender.com/']
 
 
 # Application definition
