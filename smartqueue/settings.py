@@ -58,6 +58,18 @@ INSTALLED_APPS = [
 
 ]
 
+CORS_ALLOW_ALL_ORIGINS = True  # Set to False in production
+CORS_ALLOW_CREDENTIALS = True
+
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3000',
+    'http://localhost:5173',
+    'http://127.0.0.1:3000',
+    "https://v0.dev",
+    "https://v0.app",
+    "https://smart-queue-btrn.onrender.com"
+]
+
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
